@@ -1,0 +1,445 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #012e40;
+}
+
+header {
+    background-color: #012e40;
+    color: whitesmoke;
+    padding: 50px 0;
+}
+
+nav {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+header h1 { 
+    /* margin: 20px; */
+    text-align: center;
+    color: whitesmoke; 
+    font-family: 'Trocchi', serif; 
+    font-size: 50px; 
+    font-weight: normal;
+    line-height: 48px;
+}
+
+
+h2 { color: whitesmoke; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+
+p { color: whitesmoke;}
+
+#cit { 
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.home-button {
+    top: 35px;
+    left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.button-container {
+    margin-top: 10px;
+    display: flex;
+    transition: transform 1s linear;
+    /* Modifica la velocità dello scorrimento */
+    white-space: nowrap;
+    /* Evita che i pulsanti scendano a capo */
+}
+
+@media screen and (max-width: 1200px) {
+    .prev,
+    .next {
+        display: none; 
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .button {
+        flex: 0 0 auto;
+    }
+}
+
+.button {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: #6A7B76;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+.footer {
+    width: 100%;
+    height: 100px;
+    /* Altezza desiderata */
+    background-color: black;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-top: 20px;
+}
+
+.vertical-layer p {
+    max-width: none;
+    font-size: 18px;
+    text-align: left;
+    /* max-width: 100%; */
+    /* Imposta la larghezza massima del testo */
+}
+
+.main-section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 92%;
+    height: auto;
+    /* background-color: #024959; */
+    background-color: #375966;
+     
+    /* border: 1px solid gray; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+
+    border-radius: 10px;
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main-section {
+      flex-direction: column; /* Imposta il layout in colonna */
+    }
+  }
+
+.img {
+    flex: 0 0 auto;
+    image-rendering: optimizeQuality;
+    width: 20%;
+    min-width: 300px; /* Imposta una larghezza minima per l'immagine */
+    height: auto;
+    padding: 50px;
+    margin-left: 50px;
+    margin-right: 65px;
+}
+
+
+
+.vertical-layer {
+    margin: 20px;
+    flex: 1;
+    padding: 50px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    max-width: 100%;
+    /* Aggiunto per limitare la larghezza del testo */
+    overflow: hidden;
+    /* Per gestire il testo che potrebbe sforare il contenitore */
+    text-overflow: ellipsis;
+    /* Se il testo sfora il contenitore, verrà visualizzato con i puntini di sospensione */
+
+
+}
+
+
+.bio-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.vertical-layer1,
+.vertical-layer2,
+.vertical-layer3 {
+    width: 300px;
+    height: 340px;
+    margin: auto;
+    background-color: #024959;
+    /* border-radius: 15px; */
+    padding: 30px;
+    color: white;
+    text-align: center;
+    /* border: 1px solid gray; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.pVerticalLayer {
+    text-align: left;
+    margin-top: auto;
+}
+
+.pVerticalLayer a {
+    color: white;
+    /* Imposta il colore del testo del link */
+    text-decoration: none;
+    /* Rimuove il sottolineato dai link */
+}
+
+.pVerticalLayer a:hover {
+    text-decoration: underline;
+    /* Mostra il sottolineato solo durante l'hover */
+}
+
+.layer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    height: auto;
+    align-items: center;
+
+    background-color: #375966;
+    /* border-radius: 15px; */
+    padding: 20px;
+    color: white;
+    /* border: 1px solid gray; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    /* margin-left: 1vw;
+} */
+
+}
+
+.layer p {
+    overflow: hidden;
+    padding: 20px;
+    max-width: none;
+    font-size: 18px;
+    text-align: left;
+    /* max-width: 100%; */
+    /* Imposta la larghezza massima del testo */
+}
+
+
+#search-container {
+
+    position: absolute;
+    /* o 'fixed' per fissarlo mentre si scorre la pagina */
+    top: 35px;
+    right: 20px;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+    background-color: #6A7B76;
+    /* Sfondo bianco o un altro colore a scelta */
+    /* border-radius: 20px; */
+    /* Bordi arrotondati */
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Ombra leggera per profondità */
+}
+
+#search-input {
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    /* border-radius: 15px; */
+    /* Bordi arrotondati per l'input */
+    width: 200px;
+    flex: 1;
+    /* Larghezza fissa, puoi adattarla a seconda delle tue necessità */
+}
+
+#search-form button {
+    background-color: #446f80;
+    /* Colore del bottone, scegli quello che preferisci */
+    color: white;
+    /* padding: 10px 20px; */
+    
+    border: none;
+    /* border-radius: 10px; */
+    /* Bordi arrotondati per il bottone */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    width: 30px;
+    padding: 3px;
+    font-size: 25px;  
+}
+
+#search-form button:hover {
+    background-color: #375966;
+    /* Effetto hover per il bottone */
+}
+
+/* Rimuove gli stili di outline al focus per input e button, sostituendoli con un effetto personalizzato se necessario */
+#search-input:focus,
+#search-form button:focus {
+    outline: none;
+    /* Aggiungi qui eventuali stili di focus personalizzati */
+}
+
+/* Stilizza l'input di testo per rimuovere i bordi interni in alcuni browser */
+#search-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #999;
+}
+
+#search-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #999;
+}
+
+#search-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #999;
+}
+
+#search-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #999;
+}
+
+#suggestions {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    /* Posiziona i suggerimenti subito sotto l'input */
+    right: 0;
+    /* Allinea i suggerimenti a destra dell'input */
+    width: calc(100% - 2px);
+    /* Calcola la larghezza esatta per abbinare l'input, aggiusta se necessario */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Assicurati che sia sopra altri elementi */
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background-color: #f6f6f6;
+}
+
+.contatti {
+    font-weight: bolder;
+    padding-right: 20px;
+}
+
+
+@media (max-width: 1200px) {
+    header {
+        padding: 10px 0;
+        /* Riduce il padding per risparmiare spazio */
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        /* Riduce la dimensione del font su schermi più piccoli */
+    }
+
+    #search-container {
+        position: static;
+        /* O 'relative' a seconda delle tue esigenze */
+        margin-top: 10px;
+        /* Aggiunge spazio sopra il form di ricerca */
+        width: 100%;
+        /* Fa occupare al form l'intera larghezza */
+        box-sizing: border-box;
+        /* Assicura che il padding non influisca sulla larghezza */
+    }
+
+    #search-form {
+        flex-direction: column;
+        /* Impila input e bottone verticalmente */
+        align-items: stretch;
+        /* Allarga il bottone e l'input per occupare tutto lo spazio orizzontale */
+    }
+
+    #search-input,
+    #search-form button {
+        width: auto;
+        /* Permette ai figli di espandersi */
+        margin: 5px;
+        /* Riduce il margine */
+    }
+
+    .button-container {
+        justify-content: center;
+        /* Centra i bottoni se lo spazio è ridotto */
+        flex-wrap: wrap;
+        /* Permette ai bottoni di andare a capo */
+    }
+
+    .button {
+        width: 100px;
+        /* Riduce la dimensione dei bottoni */
+        height: 100px;
+        /* Riduce la dimensione dei bottoni */
+        margin: 5px;
+        /* Riduce lo spazio intorno ai bottoni */
+    }
+}
+
+.custom-color-link {
+    color: white;
+}

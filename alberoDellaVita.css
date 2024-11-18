@@ -1,0 +1,267 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    /*scrollbar-width: none;*/
+}
+
+html {
+    overflow: hidden;
+    background-color: rgb(245, 240, 234);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    -webkit-perspective: 1px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+div.parallax {
+    margin-top: 5vh;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+div.parallax:after {
+    background-image: url("resources/1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    content: "";
+    transform: translateZ(-1px) scale(2);
+    -webkit-transform: translateZ(-1px) scale(2);
+}
+
+h1 {
+    width: 80%;
+    font-family: "Arial";
+    font-size: 400%;
+    color: #333;
+    text-align: right;
+    padding-top: 20vh;
+    padding-bottom: 0vh;
+    margin-right: 2vw;
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+h3.subtitle{
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "Arial";
+    font-size: 200%;
+    color: #333;
+    text-align: right;
+    padding-top: 0vh;
+    padding-bottom: 20vh;
+    margin-right: 2vw;
+    float: right;
+    margin-top: 0px;
+}
+
+div.content-outer {
+    width: 100%;	
+    background-color: rgb(0, 0, 0, 0.2);
+    perspective: 2px;
+    -webkit-perspective: 2px;
+}
+
+div.content-inner {
+    background-color: white;
+    width: 60%;
+    font-family: "Arial";
+    font-size: 13pt;
+    color: #333;
+    font-size: 1.5em;
+    line-height: 2em;
+    margin: 0px auto;
+    display: block;
+    -moz-box-shadow: 0 0 25px #333333;
+    -webkit-box-shadow: 0 0 25px #333333;
+    box-shadow: 0 0 10vw rgba(0, 0, 0, 1);
+    padding-bottom: 5vh;
+}
+
+p.paragraph{
+    padding: 10%;
+}
+
+div.shadow {
+    -moz-box-shadow: 0 0 25px #333333;
+    -webkit-box-shadow: 0 0 25px #333333;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
+
+h3.paragraphTitle {
+    padding-top: 5vh;
+    margin-left: 5vh;
+    margin-bottom: 2vh;
+    line-height: 1em;
+    font-size: 3em;
+    font-weight: bold;
+    color: #222;
+}
+
+h4.listConcept {
+    font-weight: bold;
+    margin: 1em 0em;
+}
+
+div.paragraph {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+div.footer {
+    position: sticky;
+    bottom: -0.5vh;
+    left: 0;
+    height: 9.5vh;
+    width: 100vw;
+    background-color: #222;
+    border-top: 1px solid #999;
+}
+
+div.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8vh;
+    box-sizing: border-box;
+    background-color: #eee;
+    border-bottom: 2px solid #d8d8d8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.header-links{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.header-others{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.header-element{
+    width: 10%;
+    display: flex;
+    text-decoration: none;
+}
+
+.header-button{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    color: #333;
+    font-weight: bold;
+}
+
+.header-button:hover{
+    background-color: #ddd;
+}
+
+
+button.meditationLink {
+    background-color: rgb(0, 142, 236);
+    border: 0px solid white;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+    outline-color: rgb(0, 116, 194);
+    border-radius: 5px;
+    padding: 1vh;
+    margin: 5vh auto;
+    align-self: center;
+    color: white;
+    display: block;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button.meditationLink:hover {
+    background-color: rgb(0, 106, 177)
+}
+
+footer.footer{
+    background-color: #1a1a1a;
+    height: 6vh;
+    color: #e4e4e4;
+    padding-top: 2vh;
+    padding-left: auto;
+    padding-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.footerParagraph{
+    text-align: center;
+}
+
+a.footerLink{
+    color: #e4e4e4;
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        width: 88%;
+        font-size: 40pt;
+        padding: 10vh 20px;
+        float: none;
+    }
+    p {
+        color: #333;
+    }
+    ul {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    div.content-inner {
+        width: 80%;
+        text-align: justify;
+        padding: 20px 0px;
+        font-size: large;
+        line-height: normal;
+    }
+    h3.paragraphTitle {
+        padding-top: 5vh;
+        margin-left: 2vh;
+        margin-bottom: 2vh;
+        line-height: normal;
+        font-size: 25pt;
+        font-weight: bold;
+        color: #222;
+        text-align: left;
+    }
+}
