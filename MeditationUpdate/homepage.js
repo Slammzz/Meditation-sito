@@ -3,7 +3,7 @@ var buttonContainer = document.querySelector('.button-container');
 var buttons = document.querySelectorAll('.button'); // Prendi tutti i pulsanti
 var buttonWidth = buttons[0].offsetWidth + 20; // Larghezza di un pulsante, incluso il margine
 var totalButtons = buttons.length / 2; // Diviso per 2 perché le immagini sono duplicate
-var scrollInterval = 6 * 1000; // 6 secondi in millisecondi
+var scrollInterval = 4 * 1000; // 6 secondi in millisecondi
 var autoScrollStep = 1; // Incremento il numero di immagini che scorrono alla volta
 var autoScrollInterval; // Variabile per l'intervallo di autoscroll
 

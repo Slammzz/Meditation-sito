@@ -1,0 +1,61 @@
+body {
+    font-family: 'Trocchi', serif;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Impedisce che il contenuto lungo espanda il layout */
+}
+.menu {
+    flex: 0 0 200px; /* Fissa la larghezza del menu a 200px */
+    background-color: #375966;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Scroll verticale per il menu */
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #6A7B76;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.menu a:hover {
+    background-color: #446f80;
+}
+.content {
+    flex-grow: 1; /* Espandi per occupare lo spazio disponibile */
+    padding: 20px;
+    background-color: #012e40;
+    color: whitesmoke;
+    overflow-y: auto; /* Scroll verticale per contenuti lunghi */
+}
+audio {
+    width: 100%; /* Rende il player audio largo quanto il contenitore */
+    margin-top: 20px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .home-button {
+    display: flex;
+    align-items: center;
+}
+
+header h1.Titolo {
+    flex: 1;
+    text-align: center;
+    color: white;
+    margin: 0;
+}

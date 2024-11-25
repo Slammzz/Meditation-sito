@@ -192,10 +192,6 @@ div.header {
     font-weight: bold;
 }
 
-.header-button:hover{
-    background-color: #ddd;
-}
-
 a.footerLink{
     color: #e4e4e4;
 }

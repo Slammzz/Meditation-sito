@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Lettere Ebraiche</title>
+    <link rel="stylesheet" href="/MeditationUpdate/lettere.css">
+</head>
+<body>
+    
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+            
+                <img class="linkHome" src="../risorse/immagini/varie/home.png" alt="home" style="height: 40px;">
+            </a>
+        </div>
+        <h1 class="Titolo" style="color: white; text-align: center; flex: 1; margin: 0;">MEDITAZIONI</h1>
+    </header>
+    
+
+    <div class="container">
+        <!-- Menu laterale -->
+        <div class="menu" id="menu">
+            <!-- Gli elementi del menu vengono popolati dinamicamente -->
+        </div>
+
+        <!-- Contenuto -->
+        <div class="content">
+            <h2 id="title">Seleziona una lettera</h2>
+            <p id="text">Seleziona una lettera dal menu a sinistra per vedere i dettagli.</p>
+            <div id="customText"></div>
+            <!-- Player audio -->
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="/MeditationUpdate/risorse/audio/lettere" type="audio/mp3">
+                Il tuo browser non supporta l'elemento audio.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+       // Funzione per caricare i testi dal file di testo
+        async function loadTexts() {
+            const response = await fetch('/MeditationUpdate/risorse/testi/testoLettere.txt');
+            const data = await response.text();
+
+            // Divide i blocchi separati da '---'
+            const items = data.split('---').filter(line => line.trim() !== '');
+
+            const menu = document.getElementById('menu');
+            let lettere = {}; // Per mappare lettere con i loro contenuti e audio
+
+            // Processa ogni elemento
+            for (let i = 0; i < items.length; i++) {
+                const [lettera, traduzione, ...descrizione] = items[i].split(':').map(part => part.trim());
+                const testoPersonalizzato = descrizione.join(':'); // Ricostruisce il testo lungo
+                const audioFile = `/MeditationUpdate/risorse/audio/lettere/${lettera}.m4a`;// Percorso per l'audio
+
+                // Memorizza i dettagli della lettera
+                lettere[lettera] = { traduzione, testoPersonalizzato, audioFile };
+
+                // Crea l'elemento di menu
+                const elemento = document.createElement('a');
+                elemento.href = `#`;
+                elemento.innerText = `${lettera} - ${traduzione}`;
+                elemento.onclick = function (e) {
+                    e.preventDefault(); // Previeni il caricamento della pagina
+                    console.log('Audio per la lettera:', audioFile); // Log di debug
+                    showContent(lettera, traduzione, testoPersonalizzato, audioFile);
+                };
+                menu.appendChild(elemento);
+            }
+
+            // Controlla i parametri della query string per aprire automaticamente una lettera
+            const params = new URLSearchParams(window.location.search);
+            const letteraParam = params.get('lettera'); // Legge il parametro 'lettera'
+            if (letteraParam && lettere[letteraParam]) {
+                const { traduzione, testoPersonalizzato, audioFile } = lettere[letteraParam];
+                showContent(letteraParam, traduzione, testoPersonalizzato, audioFile);
+            }
+        }
+
+        // Funzione per aggiornare il contenuto in base alla selezione
+        function showContent(lettera, traduzione, testoPersonalizzato, audioFile) {
+            document.getElementById("title").innerText = `Lettera: ${lettera}`;
+            document.getElementById("text").innerText = `Traduzione: ${traduzione}`;
+            document.getElementById("customText").innerText = testoPersonalizzato;
+
+            // Ottieni il player audio e la sorgente
+            const audioPlayer = document.getElementById("audioPlayer");
+            const audioSource = document.getElementById("audioSource");
+
+            // Interrompi la riproduzione audio corrente
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0; // Riavvia il file audio
+
+            // Aggiorna la sorgente audio
+            audioSource.src = audioFile;
+            audioPlayer.load(); // Ricarica il file audio
+            audioPlayer.play(); // Avvia la riproduzione
+        }
+
+        // Carica i testi al caricamento della pagina
+        loadTexts();
+
+    </script>
+</body>
+</html>
