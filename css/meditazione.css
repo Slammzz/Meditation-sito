@@ -2,11 +2,11 @@ body {
     font-family: 'Source Sans Pro', sans-serif; 
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f0efef;
 }
 
 header {
-    background-color: whitesmoke; 
+    background-color: #f0efef; 
     color: #2c3e50;
     padding: 50px 0;
 }
@@ -22,15 +22,15 @@ header h1 {
     text-align: center;
     color: #2c3e50;
     font-family: 'Trocchi', serif; 
-    font-size: 50px; 
+    font-size: 90px; 
     font-weight: normal;
     line-height: 48px;
 }
 
 
-h2 { color: whitesmoke; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+h2 { color: #f0efef; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
 
-p { color: whitesmoke;}
+p { color: #f0efef;}
 
 #cit { 
     font-size: 12px;
@@ -74,14 +74,6 @@ p { color: whitesmoke;}
 }
 
 .button {
-    /*width: 150px;
-    height: 150px;
-    margin: 10px;
-    border-radius: 15px;
-    background-color: #6A7B76;
-    overflow: hidden;
-    flex-shrink: 0;*/
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,6 +303,8 @@ p { color: whitesmoke;}
     flex: 1;
     /* Larghezza fissa, puoi adattarla a seconda delle tue necessità */
 }
+
+
 
 #search-form button {
     background-color: #446f80;
