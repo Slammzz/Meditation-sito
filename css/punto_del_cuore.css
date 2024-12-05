@@ -18,11 +18,11 @@ header h1 {
   text-align: center;
   color: #2c3e50;
   font-family: 'Trocchi', serif;
-  font-size: 8vw; /* Usa un valore relativo alla larghezza della finestra */
+  font-size: 3vw; /* Usa un valore relativo alla larghezza della finestra */
   font-weight: normal;
-  line-height: 1.2; /* Aggiungi un po' di spazio tra le righe */
+  line-height: 1; /* Aggiungi un po' di spazio tra le righe */
   margin: 0 auto;
-  padding-top: 100px; 
+  padding-top: 50px; 
 }
 
 @media (max-width: 1200px) {
@@ -48,7 +48,7 @@ header h1 {
 
 
 
-h2 { color: #f0efef; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+h2 { color: #2c3e50; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
 
 h3{ color: #2c3e50; font-family: 'Trocchi', serif;  font-size: 50px; font-weight: normal; line-height: 32px; margin: 0 0 24px; text-align: center; }
 
@@ -102,8 +102,19 @@ p { color: #f0efef;}
 }
 
 @media screen and (max-width: 1200px) {
-  .prev,
-  .next {
+    .button-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .button {
+        flex: 0 0 auto;
+    }
+}
+
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -121,22 +132,12 @@ p { color: #f0efef;}
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 50px;
 }
 
 .prev {
     left: 0;
     border-radius: 3px 0 0 3px;
-}
-  .button-container {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-  }
-
-  .button {
-      flex: 0 0 auto;
-  }
 }
 
 .button {

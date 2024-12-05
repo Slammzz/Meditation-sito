@@ -1,15 +1,22 @@
 var currentIndex = 0; // Indice corrente iniziale
 var buttonContainer = document.querySelector('.button-container');
-var buttons = document.querySelectorAll('.button'); // Prendi tutti i pulsanti
-var buttonWidth = buttons[0].offsetWidth + 20; // Larghezza di un pulsante, incluso il margine
-var totalButtons = buttons.length / 2; // Diviso per 2 perché le immagini sono duplicate
+var buttonWidth = document.querySelector('.test').offsetWidth+170; // Larghezza di un pulsante, incluso il margine
+var totalButtons = 22;
 var scrollInterval = 5 * 1000; // 6 secondi in millisecondi
 var autoScrollStep = 1; // Incremento il numero di immagini che scorrono alla volta
 var autoScrollInterval; // Variabile per l'intervallo di autoscroll
 
 function updateCarouselPosition(smooth = true) {
     var newPosition = -(currentIndex % totalButtons) * buttonWidth;
-    buttonContainer.style.transition = smooth ? 'transform 1s ease-out' : 'none'; // Rendi la transizione più lenta
+    
+    // Quando siamo alla fine del carosello, disabilitiamo la transizione
+    if (currentIndex >= totalButtons-10) {
+        // Reset della posizione senza transizione
+        currentIndex = 0;
+        newPosition = 0;  // Torna alla posizione iniziale
+    }
+
+    buttonContainer.style.transition = smooth ? 'transform 1s ease-out' : 'none';
     buttonContainer.style.transform = 'translateX(' + newPosition + 'px)';
 }
 
@@ -21,10 +28,12 @@ function autoScroll() {
     }
 
     currentIndex += autoScrollStep; // Incrementa di un numero maggiore di immagini
+
+    // Se supera il totale, resetta l'indice alla prima immagine
     if (currentIndex >= totalButtons) {
-        // Se supera il totale, aggiusta per una transizione senza interruzioni
-        currentIndex %= totalButtons; // Assicura che l'indice non superi il numero totale di immagini
+        currentIndex = 0; // Reset alla prima immagine
     }
+
     updateCarouselPosition();
 }
 
@@ -57,9 +66,10 @@ function resetButtonPosition() {
 
 function nextButton() {
     currentIndex += autoScrollStep;
-    if (currentIndex >= totalButtons) {
+    if (currentIndex >= totalButtons - 10) {
         currentIndex %= totalButtons;
     }
+
     updateCarouselPosition();
     resetAutoScroll(); // Resetta l'auto-scroll ogni volta che l'utente interagisce
 }
@@ -69,6 +79,7 @@ function prevButton() {
     if (currentIndex < 0) {
         currentIndex += totalButtons; // Gestisce il movimento all'indietro oltre l'inizio
     }
+
     updateCarouselPosition();
     resetAutoScroll(); // Resetta l'auto-scroll ogni volta che l'utente interagisce
 }

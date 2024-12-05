@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   background-color: #f0efef; /* Grigio chiaro neutro */
   display: flex;
   flex-direction: column;
@@ -43,6 +43,9 @@ body {
   display: flex;
   list-style: none;
   transition: transform 0.3s ease-in-out;
+  font-size: 1rem;
+  padding: 5px 20px;
+  border-radius: 5px;
 }
 
 .menu-items li {
@@ -51,7 +54,7 @@ body {
 
 .menu-items a {
   text-decoration: none;
-  color: #f0efef; /* Bianco brillante */
+  color: #ecf0f1; /* Bianco brillante */
   font-size: 1rem;
   padding: 5px 10px;
   border-radius: 5px;

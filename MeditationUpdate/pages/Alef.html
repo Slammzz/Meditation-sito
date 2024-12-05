@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettere Ebraiche</title>
+    <link rel="stylesheet" href="Alef/Alef.css">
+</head>
+
+<body>
+
+    <h1>Lettere Ebraiche</h1>
+
+    <label for="letterSelect">Seleziona una lettera:</label>
+    <select id="letterSelect">
+        <option value="Aleph">Alef</option>
+        <option value="Beth">Bet</option>
+        <option value="Gimel">Gimel</option>
+        <option value="Daled">Daled</option>
+        <option value="He">He</option>
+        <option value="Vav">Vav</option>
+        <option value="Zayin">Zayin</option>
+        <option value="Chet">Chet</option>
+        <option value="Tet">Tet</option>
+        <option value="Yod">Yod</option>
+        <option value="Kaf">Kaf</option>
+        <option value="Lamed">Lamed</option>
+        <option value="Mem">Mem</option>
+        <option value="Nun">Nun</option>
+        <option value="Samekh">Samekh</option>
+        <option value="Ayin">Ayin</option>
+        <option value="Peh">Peh</option>
+        <option value="Tzade">Tzade</option>
+        <option value="Qof">Qof</option>
+        <option value="Resh">Resh</option>
+        <option value="Shin">Shin</option>
+        <option value="Tav">Tav</option>
+    </select>
+
+    <div id="letterContent">
+        <h2 id="letterName">Alef</h2>
+        <p id="letterText">Testo per Alef...</p>
+        <img id="letterImage" src="Aleph.jpg" alt="Lettera Alef">
+        <audio id="letterAudio" controls>
+            <source id="audioSource" src="../MeditationUpdate/pages/Alef/Alef.mp3" bar-width="5" bar-gap="2" type="audio/mp3">
+        </audio>
+    </div>
+
+    <footer>
+        <audio-player title="Alef" src="../MeditationUpdate/pages/Alef/Alef.mp3" bar-width="5" bar-gap="2" preload
+            autoplay></audio-player>
+
+        <script src=".././../../js/audio-player.js"></script>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".header__icon-bar").click(function (e) {
+
+                $(".header__menu").toggleClass('is-open');
+                e.preventDefault();
+
+            });
+        });
+    </script>
+
+    <script src="contenuti.js"></script>
+</body>
+</html>
