@@ -30,6 +30,8 @@ header h1 {
 
 h2 { color: #f0efef; font-family: 'Trocchi', serif;  font-size: 30px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
 
+h3{ color: #2c3e50; font-family: 'Trocchi', serif;  font-size: 50px; font-weight: normal; line-height: 32px; margin: 0 0 24px; text-align: center; }
+
 p { color: #f0efef;}
 
 #cit { 
