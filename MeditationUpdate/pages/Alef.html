@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lettere Ebraiche</title>
-    <link rel="stylesheet" href="Alef/Alef.css">
+    <link rel="stylesheet" href="contenuti.css">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <input class="checkbox" type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </label>
+
+            <div class="logo">
+                <a href="https://www.buonarroti.tn.it/" target="_blank">
+                    <img class="logo" src="../../MeditationUpdate/resources/images-removebg-preview.png" alt="Logo">
+                </a>
+            </div>
+            
+            <ul class="menu-items">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../html/meditazione.html">Meditazioni</a></li>
+                <li><a href="../../html/punto_del_cuore.html">Punto del Cuore</a></li>
+            </ul>
+        </div>
+    </nav>
 </head>
-
 <body>
-
+    <br>
+    <br>
     <h1>Lettere Ebraiche</h1>
 
     <label for="letterSelect">Seleziona una lettera:</label>
     <select id="letterSelect">
-        <option value="Aleph">Alef</option>
-        <option value="Beth">Bet</option>
+        <option value="" disabled selected>Seleziona una lettera</option>
+        <option value="Alef">Alef</option>
+        <option value="Beth">Beth</option>
         <option value="Gimel">Gimel</option>
         <option value="Daled">Daled</option>
-        <option value="He">He</option>
+        <option value="Hei">Hei</option>
         <option value="Vav">Vav</option>
-        <option value="Zayin">Zayin</option>
+        <option value="Zayn">Zayn</option>
         <option value="Chet">Chet</option>
         <option value="Tet">Tet</option>
         <option value="Yod">Yod</option>
@@ -38,33 +62,15 @@
     </select>
 
     <div id="letterContent">
-        <h2 id="letterName">Alef</h2>
-        <p id="letterText">Testo per Alef...</p>
-        <img id="letterImage" src="Aleph.jpg" alt="Lettera Alef">
-        <audio id="letterAudio" controls>
-            <source id="audioSource" src="../MeditationUpdate/pages/Alef/Alef.mp3" bar-width="5" bar-gap="2" type="audio/mp3">
+        <h2 id="letterName">Seleziona una lettera per visualizzare i dettagli</h2>
+        <p id="letterText"></p>
+        <p id="letterMed"></p>
+        <img id="letterImage" src="" alt="Immagine della lettera" style="display: none;">
+        <audio id="letterAudio" controls style="display: none;">
+            <source id="audioSource" src="" type="audio/mp3">
         </audio>
     </div>
 
-    <footer>
-        <audio-player title="Alef" src="../MeditationUpdate/pages/Alef/Alef.mp3" bar-width="5" bar-gap="2" preload
-            autoplay></audio-player>
-
-        <script src=".././../../js/audio-player.js"></script>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            $(".header__icon-bar").click(function (e) {
-
-                $(".header__menu").toggleClass('is-open');
-                e.preventDefault();
-
-            });
-        });
-    </script>
 
     <script src="contenuti.js"></script>
 </body>

@@ -59,3 +59,61 @@ header h1.Titolo {
     color: white;
     margin: 0;
 }
+
+@media (max-width: 1200px) {
+    header {
+        padding: 10px 0;
+        /* Riduce il padding per risparmiare spazio */
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        /* Riduce la dimensione del font su schermi più piccoli */
+    }
+
+    #search-container {
+        position: static;
+        /* O 'relative' a seconda delle tue esigenze */
+        margin-top: 10px;
+        /* Aggiunge spazio sopra il form di ricerca */
+        width: 100%;
+        /* Fa occupare al form l'intera larghezza */
+        box-sizing: border-box;
+        /* Assicura che il padding non influisca sulla larghezza */
+    }
+
+    #search-form {
+        flex-direction: column;
+        /* Impila input e bottone verticalmente */
+        align-items: stretch;
+        /* Allarga il bottone e l'input per occupare tutto lo spazio orizzontale */
+    }
+
+    #search-input,
+    #search-form button {
+        width: auto;
+        /* Permette ai figli di espandersi */
+        margin: 5px;
+        /* Riduce il margine */
+    }
+
+    .button-container {
+        justify-content: center;
+        /* Centra i bottoni se lo spazio è ridotto */
+        flex-wrap: wrap;
+        /* Permette ai bottoni di andare a capo */
+    }
+
+    .button {
+        width: 100px;
+        /* Riduce la dimensione dei bottoni */
+        height: 100px;
+        /* Riduce la dimensione dei bottoni */
+        margin: 5px;
+        /* Riduce lo spazio intorno ai bottoni */
+    }
+}
+
+.custom-color-link {
+    color: white;
+}
