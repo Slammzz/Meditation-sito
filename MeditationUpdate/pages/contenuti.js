@@ -84,3 +84,11 @@ document.querySelectorAll('#Menu-Container a').forEach(item => {
         .catch(error => console.error("Errore nel caricamento del file JSON:", error));
     });
 });
+
+/*
+<footer>
+        <audio-player title="Alef" src="Alef.mp3" bar-width="5" bar-gap="2"></audio-player>
+
+        <script src="../../../js/audio-player.js"></script>
+    </footer>
+*/
