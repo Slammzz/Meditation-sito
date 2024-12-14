@@ -73,9 +73,8 @@ p { color: #f0efef;}
   margin-top: 10px;
   display: flex;
   transition: transform 1s linear;
-  /* Modifica la velocità dello scorrimento */
   white-space: nowrap;
-  /* Evita che i pulsanti scendano a capo */
+  max-width: none;
 }
 
 .test{

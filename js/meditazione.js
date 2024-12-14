@@ -1,26 +1,18 @@
 var currentIndex = 0; // Indice corrente iniziale
 var buttonContainer = document.querySelector('.button-container');
-var buttonWidth = document.querySelector('.test').offsetWidth+170; // Larghezza di un pulsante, incluso il margine
 var totalButtons = 22;
 var scrollInterval = 5 * 1000; // 6 secondi in millisecondi
 var autoScrollStep = 1; // Incremento il numero di immagini che scorrono alla volta
 var autoScrollInterval; // Variabile per l'intervallo di autoscroll
 
 function updateCarouselPosition(smooth = true) {
-    var newPosition = -(currentIndex % totalButtons) * buttonWidth;
-    
-    // Quando siamo alla fine del carosello, disabilitiamo la transizione
-    if (currentIndex >= totalButtons-10) {
-        // Reset della posizione senza transizione
-        currentIndex = 0;
-        newPosition = 0;  // Torna alla posizione iniziale
-    }
-
+    var newPosition = -(currentIndex * buttonWidth);
     buttonContainer.style.transition = smooth ? 'transform 1s ease-out' : 'none';
-    buttonContainer.style.transform = 'translateX(' + newPosition + 'px)';
+    buttonContainer.style.transform = `translateX(${newPosition}px)`;
 }
 
-function autoScroll() {
+
+/*function autoScroll() {
     // Aggiungi un controllo per verificare se la finestra è stata ridimensionata durante lo scorrimento automatico
     if (window.innerWidth <= 1200) {
         clearInterval(autoScrollInterval); // Interrompi lo scorrimento automatico se la finestra è stata ridimensionata
@@ -35,7 +27,7 @@ function autoScroll() {
     }
 
     updateCarouselPosition();
-}
+}*/
 
 // Imposta l'intervallo di autoscroll solo se la finestra non è stata ridimensionata
 if (window.innerWidth > 1200) {
@@ -65,23 +57,21 @@ function resetButtonPosition() {
 
 
 function nextButton() {
-    currentIndex += autoScrollStep;
-    if (currentIndex >= totalButtons - 10) {
-        currentIndex %= totalButtons;
+    currentIndex++;
+    if (currentIndex >= letters.length-10) {
+        currentIndex = 0; // Torna all'inizio
     }
-
     updateCarouselPosition();
-    resetAutoScroll(); // Resetta l'auto-scroll ogni volta che l'utente interagisce
+    //resetButtonPosition();
 }
 
 function prevButton() {
-    currentIndex -= autoScrollStep;
+    currentIndex--;
     if (currentIndex < 0) {
-        currentIndex += totalButtons; // Gestisce il movimento all'indietro oltre l'inizio
+        currentIndex = letters.length - 11; // Torna alla fine
     }
-
     updateCarouselPosition();
-    resetAutoScroll(); // Resetta l'auto-scroll ogni volta che l'utente interagisce
+    //resetButtonPosition();
 }
 
 function resetAutoScroll() {
@@ -95,28 +85,28 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
 
     // Mappa delle lettere con i relativi URL
     var letterMap = {
-        'alef': 'pages/Alef/alef.html',
-        'bet': 'pages/Bet/bet.html',
-        'gimel': 'pages/Gimel/gimel.html',
-        'dalet': 'pages/Dalet/dalet.html',
-        'he': 'pages/He/he.html',
-        'vav': 'pages/Vav/vav.html',
-        'zain': 'pages/Zain/zain.html',
-        'chet': 'pages/Chet/chet.html',
-        'tet': 'pages/Tet/tet.html',
-        'yod': 'pages/Yod/yod.html',
-        'kaf': 'pages/Kaf/kaf.html',
-        'lamed': 'pages/Lamed/lamed.html',
-        'mem': 'pages/Mem/mem.html',
-        'nun': 'pages/Nun/nun.html',
-        'samech': 'pages/Samech/samech.html',
-        'ayin': 'pages/Ayin/ayin.html',
-        'pei': 'pages/Pei/pei.html',
-        'tzadi': 'pages/Tzadi/tzadi.html',
-        'qof': 'pages/Qof/qof.html',
-        'resh': 'pages/Resh/resh.html',
-        'shin': 'pages/Shin/shin.html',
-        'tav': 'pages/Tav/tav.html'
+        'alef': '../pages/Alef/alef.html',
+        'bet': '../pages/Bet/bet.html',
+        'gimel': '../pages/Gimel/gimel.html',
+        'dalet': '../pages/Dalet/dalet.html',
+        'he': '../pages/He/he.html',
+        'vav': '../pages/Vav/vav.html',
+        'zain': '../pages/Zain/zain.html',
+        'chet': '../pages/Chet/chet.html',
+        'tet': '../pages/Tet/tet.html',
+        'yod': '../pages/Yod/yod.html',
+        'kaf': '../pages/Kaf/kaf.html',
+        'lamed': '../pages/Lamed/lamed.html',
+        'mem': '../pages/Mem/mem.html',
+        'nun': '../pages/Nun/nun.html',
+        'samech': '../pages/Samech/samech.html',
+        'ayin': '../pages/Ayin/ayin.html',
+        'pei': '../pages/Pei/pei.html',
+        'tzadi': '../pages/Tzadi/tzadi.html',
+        'qof': '../pages/Qof/qof.html',
+        'resh': '../pages/Resh/resh.html',
+        'shin': '../pages/Shin/shin.html',
+        'tav': '../pages/Tav/tav.html'
     };
 
     // Controlla se l'input corrisponde a una delle lettere mappate

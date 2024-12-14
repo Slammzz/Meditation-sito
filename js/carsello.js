@@ -26,15 +26,23 @@ const letters = [
 //genera il carosello
 const container = document.querySelector('.button-container');
 
+console.log('Numero di lettere:', letters.length);
+
+
 letters.forEach(letter => {
     const div = document.createElement('div');
     div.innerHTML = `
+    <div class="lettera">
         <div class="button">
             <a href="${letter.link}" target="_blank">
                 <img src="${letter.img}" alt="${letter.name}">
             </a>
         </div>
         <p class="pBut">${letter.name}</p>
+    </div>
     `;
     container.appendChild(div);
 });
+
+// Calcola la larghezza una volta terminata la generazione
+var buttonWidth = document.querySelector('.lettera').getBoundingClientRect().width;
