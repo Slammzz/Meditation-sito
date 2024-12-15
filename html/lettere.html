@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Lettere Ebraiche</title>
     <link rel="stylesheet" href="/MeditationUpdate/lettere.css">
+    <script src="../index.js" type="module"></script>
 </head>
 <body>
-    
+    <div id="loader">
+        <div class="loading-text">
+          <img src="../MeditationUpdate/assets/lettere/1-Alef.jpg" alt="G" class="letter">
+          <img src="../MeditationUpdate/assets/lettere/10-Yod.jpg" alt="o" class="letter">
+          <img src="../MeditationUpdate/assets/lettere/15-Samech.jpg" alt="d" class="letter">
+          <img src="../MeditationUpdate/assets/lettere/19-Quf.jpg" alt="s" class="letter">
+        </div>
+        <p class="loading-message">Respira profondamente... il sito sta caricando</p>
+
+    <div class="circle"></div>
+
+  </div>
+  
+  <!-- Il resto del tuo sito -->
+  <div id="content" style="display: none;">
     <header style="display: flex; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center;">
             
@@ -104,5 +119,6 @@
         loadTexts();
 
     </script>
+  </div>
 </body>
 </html>

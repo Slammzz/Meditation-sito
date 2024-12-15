@@ -679,3 +679,75 @@ text-decoration: underline;
   font-size: 1rem;
 }
 }
+/* Stili per il loader */
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f8ff; /* Blu chiaro rilassante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Animazione delle lettere */
+.loading-text {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Spazio tra le lettere */
+}
+
+.letter {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.letter:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.letter:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.letter:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.letter:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Messaggio di caricamento */
+.loading-message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #34495e; /* Grigio rilassante */
+  font-family: "Arial", sans-serif;
+  animation: fadeInText 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
