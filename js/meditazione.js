@@ -48,6 +48,7 @@ window.addEventListener('resize', function () {
     resetButtonPosition();
 });
 
+
 function resetButtonPosition() {
     currentIndex = 0; // Reimposta l'indice corrente
     updateCarouselPosition(false); // Aggiorna la posizione dei bottoni senza effetto di transizione
@@ -59,7 +60,7 @@ function resetButtonPosition() {
 function nextButton() {
     currentIndex++;
     if (currentIndex >= letters.length-10) {
-        currentIndex = 0; // Torna all'inizio
+        currentIndex -- ; // Torna all'inizio
     }
     updateCarouselPosition();
     //resetButtonPosition();
@@ -68,7 +69,7 @@ function nextButton() {
 function prevButton() {
     currentIndex--;
     if (currentIndex < 0) {
-        currentIndex = letters.length - 11; // Torna alla fine
+        currentIndex ++; // Torna alla fine
     }
     updateCarouselPosition();
     //resetButtonPosition();
